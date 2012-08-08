@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('stephen lee', 'lxd.dlut@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -118,6 +118,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'weibo',
+    'social_auth',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -152,3 +154,11 @@ LOGGING = {
         },
     }
 }
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.weibo.WeiboBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+WEIBO_CLIENT_KEY = '357199909'
+WEIBO_CLIENT_SECRET = '85cab851da0baf8ea08c13523355a504'
